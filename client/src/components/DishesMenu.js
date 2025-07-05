@@ -1,4 +1,3 @@
-//components/DishesMenu.js
 
 import React, { useContext } from "react";
 import DishCard from "./DishCard";
