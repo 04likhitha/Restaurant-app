@@ -10,7 +10,6 @@ const RestaurantList = () => {
   const [ratingFilter, setRatingFilter] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
-  // ✅ Stable version of the function used inside useEffect
   const filterRestaurants = useCallback(() => {
     let filtered = restaurants;
 
@@ -32,7 +31,7 @@ const RestaurantList = () => {
 
   useEffect(() => {
     filterRestaurants();
-  }, [filterRestaurants]); // ✅ No ESLint warning now
+  }, [filterRestaurants]); 
 
   const handleRestaurantClick = (restaurantId) => {
     setSelectedRestaurant(
