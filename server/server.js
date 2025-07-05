@@ -1,4 +1,3 @@
-//server.js
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -30,7 +29,7 @@ const restaurantSchema = new mongoose.Schema({
 
 const Restaurant = mongoose.model("Restaurant", restaurantSchema);
 
-// Seed initial data
+
 const seedData = [
   {
     name: "Italian Delight",
@@ -174,18 +173,18 @@ const seedDatabase = async () => {
   }
 };
 
-// Seed data when the server starts
+
 seedDatabase();
 
 app.get("/restaurants", async (req, res) => {
   try {
-    // Use the 'find' method of the 'Restaurant' model to retrieve all restaurants
+    
     const restaurants = await Restaurant.find({});
 
-    // Send the retrieved restaurants as a JSON response
+   
     res.json(restaurants);
   } catch (error) {
-    // Handle any errors that may occur during the process and send a 500 Internal Server Error response
+    
     res.status(500).json({ error: error.message });
   }
 });
